@@ -42,8 +42,28 @@
             children: 'Hello paragraph 1',
         });
 
+        const li = React.createElement('li', {
+            children: 'Apple'
+        })
+
+        const li2 = React.createElement('li', {
+            children: 'Grape'
+        })
+
+        const li3 = React.createElement('li', {
+            children: 'Orange'
+        })
+
+        const ul = React.createElement(
+            'ul', // Tag
+            {className: 'Lists'}, // Attribute
+            React.createElement('li', null, 'Apple'), // Element
+            React.createElement('li', null, 'Orange'),
+            React.createElement('li', null, 'Grape'),
+        );
+
         const element = React.createElement(React.Fragment, {
-            children: [h1, p1, p2]
+            children: [h1, p1, p2, ul]
         });
 
         ReactDOM.render(element, root);
