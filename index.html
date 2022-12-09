@@ -25,6 +25,7 @@
 
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script>
         const root = document.querySelector('#root');
@@ -39,7 +40,7 @@
         });
 
         const p2 = React.createElement('p', {
-            children: 'Hello paragraph 1',
+            children: 'Hello paragraph 2',
         });
 
         const li = React.createElement('li', {
@@ -56,17 +57,31 @@
 
         const ul = React.createElement(
             'ul', // Tag
-            {className: 'Lists'}, // Attribute
+            {className: 'lists'}, // Attribute
             React.createElement('li', null, 'Apple'), // Element
             React.createElement('li', null, 'Orange'),
             React.createElement('li', null, 'Grape'),
         );
+
 
         const element = React.createElement(React.Fragment, {
             children: [h1, p1, p2, ul]
         });
 
         ReactDOM.render(element, root);
+    </script>
+
+<!--    Babel-->
+    <script type="text/babel">
+        const elementJsx = (
+            <ul>
+                <li>Apple</li>
+                <li>Orange</li>
+                <li>Grape</li>
+            </ul>
+        );
+
+        ReactDOM.render(elementJsx, root);
     </script>
 </body>
 </html>
